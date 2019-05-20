@@ -1,14 +1,19 @@
-// Events module
+// HTTP module
 
-const EventEmitter = require("events"); //EventEmitter is a class, contains property and methods.
+const http = require("http");
 
-const Logger = require("./logger");
-const logger = new Logger();
+const server = http.createServer((req, res) => {
+  if (req.url === "/") {
+    res.write("Hello World!");
+    res.end();
+  }
 
-// Register a listener
-logger.on("messageLogged", arg => {
-  //e, eventArg or arg
-  console.log("Listener called", arg);
+  if (req.url === "/api/courses") {
+    res.write(JSON.stringify([1, 2, 3]));
+    res.end();
+  }
 });
 
-logger.log("message");
+server.listen(3000);
+
+console.log("Listening on port 3000....");
