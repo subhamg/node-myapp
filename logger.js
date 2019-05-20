@@ -8,7 +8,11 @@ function log(message) {
   console.log(message);
 }
 
-module.exports.log = log; // Adding method called 'log' to exports object and setting it to log function
+// Adding method called 'log' to exports object and setting it to log function
+// module.exports.log = log;
 
+// here we are only exporting one function therefore, we don't need to call a method
+
+module.exports = log;
 // Name of method can be anything you like. This will keep the url private.
 // module.exports.endPoint = url;
