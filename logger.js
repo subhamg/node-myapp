@@ -1,5 +1,5 @@
-/* The var url and log function are scope to only this module. 
-   They are private, they are not visible outside */
+console.log(__filename);
+console.log(__dirname);
 
 var url = "http://mylogger.io/log"; // Sending http request to this url
 
@@ -8,11 +8,4 @@ function log(message) {
   console.log(message);
 }
 
-// Adding method called 'log' to exports object and setting it to log function
-// module.exports.log = log;
-
-// here we are only exporting one function therefore, we don't need to call a method
-
 module.exports = log;
-// Name of method can be anything you like. This will keep the url private.
-// module.exports.endPoint = url;
