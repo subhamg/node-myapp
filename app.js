@@ -1,9 +1,17 @@
-// OS module
+// File System module
 
-const os = require("os");
+const fs = require("fs");
 
-var totalMemory = os.totalmem();
-var freeMemory = os.freemem();
+// const files = fs.readdirSync("./");
 
-console.log(`Total Memory: ${totalMemory}`); //Template string
-console.log(`Free Memory: ${freeMemory}`);
+// console.log(files);
+
+// fs.readdir("./", function(err, files) {
+//   if (err) console.log("Error", err);
+//   else console.log("Result", files);
+// });
+
+fs.readdir("./", (err, files) => {
+  if (err) console.log("Error", err);
+  else console.log("Result", files);
+});
