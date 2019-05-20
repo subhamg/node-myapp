@@ -1,17 +1,15 @@
-// File System module
+// Events module
 
-const fs = require("fs");
+const EventEmitter = require("events"); //EventEmitter is a class, contains property and methods.
 
-// const files = fs.readdirSync("./");
+const emitter = new EventEmitter(); // Here emitter is a object
 
-// console.log(files);
-
-// fs.readdir("./", function(err, files) {
-//   if (err) console.log("Error", err);
-//   else console.log("Result", files);
-// });
-
-fs.readdir("./", (err, files) => {
-  if (err) console.log("Error", err);
-  else console.log("Result", files);
+// Register a listener
+emitter.on("messageLogged", function() {
+  console.log("Listener called");
 });
+
+// Raise an event
+emitter.emit("messageLogged");
+
+//Emit means  Making a noise - produce signalling
