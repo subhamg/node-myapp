@@ -1,10 +1,7 @@
-// console.log(module);
+// Path module
 
-// const logger = require("./logger");
-// We define this as a const so that we don't initialize logger accidently.
+const path = require("path");
 
-var log = require("./logger");
-// console.log(logger);
+var pathObj = path.parse(__filename);
 
-// logger.log('message')
-log("message");
+console.log(pathObj);
